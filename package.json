@@ -8,14 +8,16 @@
     "start": "yarn build:main && electron .",
     "start:inspect": "yarn build:main && electron --inspect=5858 .",
     "start:inspect-brk": "yarn build:main && electron --inspect-brk=5858 .",
-    "develop": "webpack-dev-server --host 0.0.0.0 --hot --config config/webpack.config.js --config-name renderer",
+    "develop": "webpack serve --host 0.0.0.0 --hot --config config/webpack.config.js --config-name renderer",
     "build:main": "webpack --config config/webpack.config.js --config-name main",
-    "build": "webpack --config config/webpack.config.js --config-name main && electron-builder --win",
-    "release": "webpack --config config/webpack.config.js --config-name main && electron-builder --win --publish always"
+    "build:renderer": "webpack --config config/webpack.config.js --config-name renderer",
+    "build": "webpack --config config/webpack.config.js --config-name main && webpack --config config/webpack.config.js --config-name renderer && electron-builder --win",
+    "release": "webpack --config config/webpack.config.js --config-name main && webpack --config config/webpack.config.js --config-name renderer && electron-builder --win --publish always"
   },
   "build": {
     "appId": "com.riyonasan.retainer_karoshi",
     "productName": "Retainer Karoshi",
+    "artifactName": "retainer-karoshi-${version}.${ext}",
     "win": {
       "target": "portable",
       "requestedExecutionLevel": "requireAdministrator"
@@ -74,7 +76,6 @@
     "electron-builder": "^22.9.1",
     "electron-debug": "^3.2.0",
     "electron-load-devtool": "^1.2.0",
-    "electron-rebuild": "^2.3.4",
     "eslint": "^7.16.0",
     "eslint-config-react-app": "^6.0.0",
     "eslint-loader": "2.1.2",
