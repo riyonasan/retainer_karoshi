@@ -1,0 +1,13 @@
+name: Push
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Actions Status Discord
+      uses: sarisia/actions-status-discord@v1.8.1
+      if: always()
+      with:
+        webhook: ${{ secrets.DISCORD_WEBHOOK }}
