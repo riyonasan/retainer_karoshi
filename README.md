@@ -1,7 +1,24 @@
-# Electron+React+TypeScript+ES6 Template
+# retainer_karoshi
 
-This is is Electron & React & TypeScript & ES6 Starter
+## Project setup
+```
+npm install
+```
 
-## Post
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
 
-[Create React+TypeScript+ES6 template for Electron](https://ver-1-0.net/en/2019/07/14/electron-react-ts-es6)
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Lints and fixes files
+```
+npm run lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
